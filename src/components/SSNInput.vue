@@ -27,10 +27,23 @@ export default {
 
   methods: {
     preventInput () {
-      const re = /[1234567890-]/
-      if (!re.test(event.key)) {
+      let allowModifiers = false
+      let charMatch = /[1234567890-]/
+      if (event.ctrlKey || event.metaKey) {
+        charMatch = /[xvca]/
+        allowModifiers = true
+      }
+      const keyMatch = /(Backspace|Tab)/
+
+      if (!keyMatch.test(event.key) && !charMatch.test(event.key)) {
+        event.preventDefault()
+      } else if (!allowModifiers && charMatch.test(event.key) && this.input.length >= 11) {
         event.preventDefault()
       }
+    },
+
+    format () {
+
     }
   },
 
