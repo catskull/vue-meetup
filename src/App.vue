@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ssn-input></ssn-input>
+    <ssn-input :ssn="ssn"></ssn-input>
   </div>
 </template>
 
@@ -9,8 +9,15 @@ import SSNInput from './components/SSNInput'
 
 export default {
   name: 'App',
+
   components: {
     'ssn-input': SSNInput
+  },
+
+  data () {
+    return {
+      ssn: '123'
+    }
   }
 }
 </script>

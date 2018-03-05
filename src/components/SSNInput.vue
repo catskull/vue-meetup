@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="SSNInput">
     <input type="text" v-model="input">
   </div>
 </template>
@@ -9,8 +9,24 @@ export default {
   name: 'SSNInput',
   data () {
     return {
-      input: 'hi mom'
+      input: ''
     }
+  },
+
+  props: {
+    ssn: {
+      type: String,
+      default: '',
+      required: false
+    }
+  },
+
+  methods: {
+
+  },
+
+  created () {
+    this.input = this.ssn
   }
 }
 </script>
