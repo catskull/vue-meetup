@@ -2,12 +2,14 @@
   <div id="ssn-input">
     <input
       type="text"
+      placeholder="Social Security Number"
       v-model="social"
-      @keydown.native="preventChar"
-      @keyup.native="disableCopy"
+      @keydown="preventChar"
+      @keyup="disableCopy"
       @paste="parsePaste"
       maxlength="11"
     >
+    <h3>Component social is: {{social}}</h3>
   </div>
 </template>
 
@@ -74,3 +76,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  input {
+    font-size: 30px;
+  }
+</style>

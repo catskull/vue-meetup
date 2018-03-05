@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Parent social is: {{ssn}}</h1>
     <ssn-input v-model="ssn"></ssn-input>
   </div>
 </template>
@@ -16,7 +17,7 @@ export default {
 
   data () {
     return {
-      ssn: '123'
+      ssn: ''
     }
   }
 }
