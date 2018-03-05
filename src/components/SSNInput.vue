@@ -27,7 +27,7 @@ export default {
 
   methods: {
     preventInput () {
-      const re = /[1234567890()-]/
+      const re = /[1234567890-]/
       if (!re.test(event.key)) {
         event.preventDefault()
       }
