@@ -1,6 +1,10 @@
 <template>
   <div class="SSNInput">
-    <input type="text" v-model="input">
+    <input
+      type="text"
+      v-model="input"
+      @keydown="preventInput"
+    >
   </div>
 </template>
 
@@ -22,7 +26,12 @@ export default {
   },
 
   methods: {
-
+    preventInput () {
+      const re = /[1234567890()-]/
+      if (!re.test(event.key)) {
+        event.preventDefault()
+      }
+    }
   },
 
   created () {
