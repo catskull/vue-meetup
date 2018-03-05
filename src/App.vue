@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ssn-input :ssn="ssn"></ssn-input>
+    <ssn-input v-model="ssn"></ssn-input>
   </div>
 </template>
 
